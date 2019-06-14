@@ -4,7 +4,7 @@ namespace CurrieTechnologies.Razor.PageVisibility
 {
     public static class ExtensionMethods
     {
-        public static IServiceCollection AddPageVisibiliy(this IServiceCollection services)
+        public static IServiceCollection AddPageVisibility(this IServiceCollection services)
         {
             return services.AddScoped<PageVisibilityService>();
         }
