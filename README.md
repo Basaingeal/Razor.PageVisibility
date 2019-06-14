@@ -7,7 +7,7 @@ This package provides Blazor applications with access to the browser's [Page Vis
 1) In your Blazor app, add the `CurrieTechnologies.Razor.PageVisibility` [NuGet package](https://www.nuget.org/packages/CurrieTechnologies.Razor.PageVisibility/)
 
     ```
-    Install-Package CurrieTechnologies.Blazor.PageVisibility
+    Install-Package CurrieTechnologies.Razor.PageVisibility
     ```
 
 1) In your Blazor app's `Startup.cs`, register the 'PageVisibilityService'.
