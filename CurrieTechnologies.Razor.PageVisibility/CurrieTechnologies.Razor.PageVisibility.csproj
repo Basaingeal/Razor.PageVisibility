@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <Version>0.1.0</Version>
+    <Authors>Michael J. Currie</Authors>
+    <Company>Currie Technologies</Company>
+    <Product>Razor.PageVisibility</Product>
+    <Description>A Razor class library for interacting with the browser page visibility API.
+Use in Server-side Blazor apps.</Description>
+    <Copyright>Michael J. Currie</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Basaingeal/Razor.PageVisibility</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Basaingeal/Razor.PageVisibility</RepositoryUrl>
+    <PackageIconUrl>https://currietechnologyimages.blob.core.windows.net/logos/logo_v2_128.png</PackageIconUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Blazor Razor Page Visibility PageVisibility Server</PackageTags>
+    <PackageReleaseNotes>Initila Release</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="package-lock.json" />
+    <Content Remove="package.json" />
+    <Content Remove="tsconfig.json" />
+    <Content Remove="tslint.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="src\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="package-lock.json" />
+    <None Include="package.json" />
+    <None Include="tsconfig.json" />
+    <None Include="tslint.json" />
+  </ItemGroup>
+
+</Project>
