@@ -1,7 +1,7 @@
 # CurrieTechnologies.Razor.PageVisibility
 This package provides Blazor applications with access to the browser's [Page Visibility API](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API)
 
-## This package is for Server-side Blazor only. For Client-side Blazor use [CurrieTechnologies.Blazor.PageVisibility](https://github.com/Basaingeal/Blazor.PageVisibility)
+## This package is for both Server-side and Client-side Blazor. [CurrieTechnologies.Blazor.PageVisibility](https://github.com/Basaingeal/Blazor.PageVisibility) is now deprecated.
 
 ## Usage
 1) In your Blazor app, add the `CurrieTechnologies.Razor.PageVisibility` [NuGet package](https://www.nuget.org/packages/CurrieTechnologies.Razor.PageVisibility/)
@@ -10,7 +10,7 @@ This package provides Blazor applications with access to the browser's [Page Vis
     Install-Package CurrieTechnologies.Razor.PageVisibility
     ```
 
-1) In your Blazor app's `Startup.cs`, register the 'PageVisibilityService'.
+2) In your Blazor app's `Startup.cs`, register the 'PageVisibilityService'.
 
     ```
     public void ConfigureServices(IServiceCollection services)
@@ -21,9 +21,9 @@ This package provides Blazor applications with access to the browser's [Page Vis
     }
     ```
 
-2) Add this script tag in  your root html file (Likely _Host.cshtml), right under the `<script src="_framework/blazor.server.js"></script>` tag.
+3) AAdd this script tag in  your root html file (Likely _Host.cshtml for Server-side Blazor or index.html for Client-side Blazor), right under the framework script tag. (i.e `<script src="_framework/blazor.server.js"></script>` for Server-side Blazor or `<script src="_framework/blazor.webassembly.js"></script>` for Client-side Blazor)
   ```html
-  <script src="_content/currietechnologiesrazorpagevisibility/pagevisibility.js"></script>
+  <script src="_content/CurrieTechnologies.Razor.PageVisibility/pagevisibility.js"></script>
   ```
 
 3) Now you can inject the PageVisibilityService into any Blazor page and use it like this:
@@ -40,11 +40,11 @@ This package provides Blazor applications with access to the browser's [Page Vis
       </ul>
       @if (listenerId != Guid.Empty)
       {
-        <button @onclick="@HandleUnsubscibe">Unsubscribe</button>
+        <button @onclick="HandleUnsubscibe">Unsubscribe</button>
       }
       else
       {
-        <button @onclick="@(async () => listenerId = await visibility.OnVisibilityChangeAsync(OnVisibilityChange, this))">
+        <button @onclick="(async () => listenerId = await visibility.OnVisibilityChangeAsync(OnVisibilityChange, this))">
           Resubscribe
         </button>
       }

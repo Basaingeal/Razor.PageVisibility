@@ -10,8 +10,6 @@ namespace CurrieTechnologies.Razor.PageVisibility
     public class PageVisibilityService
     {
         private readonly IJSRuntime jSRuntime;
-        static readonly IDictionary<Guid, TaskCompletionSource<object>> pendingRemoveVisibilityChangeCallbackRequests =
-           new Dictionary<Guid, TaskCompletionSource<object>>();
 
         static readonly IDictionary<Guid, EventCallback<VisibilityInfo>> visibilityChangeCallbacks =
            new Dictionary<Guid, EventCallback<VisibilityInfo>>();
@@ -113,11 +111,7 @@ namespace CurrieTechnologies.Razor.PageVisibility
                 visibilityChangeCallbacks.Remove(callbackId);
             }
 
-            var tcs = new TaskCompletionSource<object>();
-            pendingRemoveVisibilityChangeCallbackRequests.Add(callbackId, tcs);
             await jSRuntime.InvokeAsync<string>("CurrieTechnologies.Razor.PageVisibility.RemoveVisibilityChangeCallback", callbackId);
-
-            await tcs.Task;
         }
 
         /// <summary>
@@ -129,15 +123,6 @@ namespace CurrieTechnologies.Razor.PageVisibility
         {
             var callbackIdGuid = Guid.Parse(callbackId);
             return RemoveVisibilityChangeCallbackAsync(callbackIdGuid);
-        }
-
-        [JSInvokable]
-        public static void ReceiveRemoveVisibilityChangeCallbackResponse(string actionId)
-        {
-            var actionIdGuid = Guid.Parse(actionId);
-            var pendingTask = pendingRemoveVisibilityChangeCallbackRequests.First(x => x.Key == actionIdGuid).Value;
-            pendingRemoveVisibilityChangeCallbackRequests.Remove(actionIdGuid);
-            pendingTask.SetResult(null);
         }
     }
 }

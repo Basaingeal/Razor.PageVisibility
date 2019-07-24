@@ -1,14 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RazorLangVersion>3.0</RazorLangVersion>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <Authors>Michael J. Currie</Authors>
     <Company>Currie Technologies</Company>
     <Product>Razor.PageVisibility</Product>
     <Description>A Razor class library for interacting with the browser page visibility API.
-Use in Server-side Blazor apps.</Description>
+Use in both Server-side and Client-side Blazor apps.</Description>
     <Copyright>Michael J. Currie</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Basaingeal/Razor.PageVisibility</PackageProjectUrl>
@@ -16,7 +17,11 @@ Use in Server-side Blazor apps.</Description>
     <PackageIconUrl>https://currietechnologyimages.blob.core.windows.net/logos/logo_v2_128.png</PackageIconUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Blazor Razor Page Visibility PageVisibility Server</PackageTags>
-    <PackageReleaseNotes>Initila Release</PackageReleaseNotes>
+    <PackageReleaseNotes>
+    Switch to .NET Standard
+    Deprecate CurrieTechnologies.Blazor.PageVisibility
+    Script tag update needed
+    </PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
@@ -28,7 +33,7 @@ Use in Server-side Blazor apps.</Description>
   </ItemGroup>
 
   <ItemGroup>
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.0.0-preview7.19365.7" />
   </ItemGroup>
 
   <ItemGroup>
