@@ -1,6 +1,6 @@
 {
   "name": "currietechnologies-razorpagevisibility",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A Razor class library for interacting with the browser visibility API",
   "scripts": {
     "build": "tsc"
