@@ -1,6 +1,6 @@
 {
   "name": "currietechnologies-razorpagevisibility",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "description": "A Razor class library for interacting with the browser visibility API",
   "scripts": {
     "build": "SET NODE_ENV=production && webpack -p --color",
