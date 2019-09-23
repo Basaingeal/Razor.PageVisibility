@@ -3,9 +3,13 @@
   "version": "0.4.0",
   "description": "A Razor class library for interacting with the browser visibility API",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "eslint ./src --ext .ts"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.3.0",
+    "@typescript-eslint/parser": "^2.3.0",
+    "eslint": "^6.4.0",
     "tslint": "^5.19.0",
     "typescript": "^3.6.2"
   },
