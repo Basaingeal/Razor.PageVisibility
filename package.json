@@ -6,18 +6,36 @@
     "build": "tsc",
     "lint": "eslint ./src --ext .ts",
     "prettier:write": "prettier --write ./src/*.ts",
-    "prettier:check": "prettier --check ./src/*.ts"
+    "prettier:check": "prettier --check ./src/*.ts",
+    "babel": "babel ./src/pagevisibility.ts --out-dir wwwroot --extensions .ts,.tsx"
   },
   "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-typescript": "^7.6.0",
+    "@types/node": "^12.7.5",
     "@typescript-eslint/eslint-plugin": "^2.3.0",
     "@typescript-eslint/parser": "^2.3.0",
     "eslint": "^6.4.0",
+    "eslint-config-prettier": "^6.3.0",
     "prettier": "^1.18.2",
     "tslint": "^5.19.0",
     "typescript": "^3.6.2"
   },
-  "author": "Michael J. Currie",
-  "dependencies": {
-    "eslint-config-prettier": "^6.3.0"
-  }
+  "browserslist": [
+    "ie 10",
+    "edge 12",
+    "chrome 33",
+    "firefox 18",
+    "safari 6.1",
+    "ios_saf 7",
+    "opera 12.1",
+    "and_chr 76",
+    "and_ff 68",
+    "and_uc 12.12",
+    "samsung 5",
+    "and_qq 1.2"
+  ],
+  "author": "Michael J. Currie"
 }
