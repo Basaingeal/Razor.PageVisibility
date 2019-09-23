@@ -23,7 +23,7 @@ This package provides Blazor applications with access to the browser's [Page Vis
 
 3) Add this script tag in  your root html file (Likely _Host.cshtml for Blazor Server Apps or index.html for Blazor WebAssembly Apps), right under the framework script tag. (i.e `<script src="_framework/blazor.server.js"></script>` for Blazor Server Apps or `<script src="_framework/blazor.webassembly.js"></script>` for Blazor WebAssembly Apps)
   ```html
-  <script src="_content/CurrieTechnologies.Razor.PageVisibility/pagevisibility.js"></script>
+  <script src="_content/CurrieTechnologies.Razor.PageVisibility/pagevisibility.min.js"></script>
   ```
 
 4) Now you can inject the PageVisibilityService into any Blazor page and use it like this:
